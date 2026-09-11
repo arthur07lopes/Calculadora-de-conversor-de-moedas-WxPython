@@ -1,10 +1,10 @@
 def obter_cotacoes_fixas():
   cotacoes = {
-    'Real Brasileiro': 1.00,
-    'Dólar Americano': 5.00,
+    'Real brasileiro': 1.00,
+    'Dólar americano': 5.00,
     'Euro': 5.50,
-    'Libras Esterlinas': 6.50,
-    'Iene Japonês': 0.035,
+    'Libra': 6.50,
+    'Iene': 0.035,
     'Dólar Australiano': 3.30
   }
   return cotacoes
