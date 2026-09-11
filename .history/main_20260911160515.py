@@ -60,7 +60,7 @@ class MainFrame(wx.Frame):
             # Calcula a conversão
             valor_convertido = calcular_conversao(valor, origem, destino, cotacoes)
             # Exibe o resultado em uma wx.MessageBox
-            wx.MessageBox(f"{valor} em {origem} é equivalente a {valor_convertido:.2f} em {destino}.", "Resultado da conversão", wx.OK | wx.ICON_INFORMATION)
+            wx.MessageBox(f"{valor_origem} {origem} é equivalente a {valor_convertido:.2f} {destino}.", "Resultado da conversão", wx.OK | wx.ICON_INFORMATION)
 
         except ValueError:
             wx.MessageBox("Por favor, insira um valor numérico válido.", "Erro", wx.OK | wx.ICON_ERROR)

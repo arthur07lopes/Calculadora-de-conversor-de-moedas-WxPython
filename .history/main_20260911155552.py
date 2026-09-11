@@ -49,19 +49,19 @@ class MainFrame(wx.Frame):
         origem = self.cb_origem.GetValue()
         destino = self.cb_destino.GetValue()
         valor = self.txt_valor.GetValue()
+        # Primeiro, obtém as cotações
+        cotacoes = obter_cotacoes_fixas()
+        # Calcula a conversão
+        valor_convertido = calcular_conversao(valor, origem, destino, cotacoes)
+        # Exibe o resultado em uma wx.MessageBox
+        wx.MessageBox(f"{valor_origem} {origem} é equivalente a {valor_convertido:.2f} {destino}.", "Resultado da conversão", wx.OK | wx.ICON_INFORMATION)
+
         if not origem or not destino or not valor:
             wx.MessageBox("Por favor, preencha todos os campos.", "Erro", wx.OK | wx.ICON_ERROR)
             return
 
         try:
             valor = float(valor)
-            # Primeiro, obtém as cotações
-            cotacoes = obter_cotacoes_fixas()
-            # Calcula a conversão
-            valor_convertido = calcular_conversao(valor, origem, destino, cotacoes)
-            # Exibe o resultado em uma wx.MessageBox
-            wx.MessageBox(f"{valor} em {origem} é equivalente a {valor_convertido:.2f} em {destino}.", "Resultado da conversão", wx.OK | wx.ICON_INFORMATION)
-
         except ValueError:
             wx.MessageBox("Por favor, insira um valor numérico válido.", "Erro", wx.OK | wx.ICON_ERROR)
             return
