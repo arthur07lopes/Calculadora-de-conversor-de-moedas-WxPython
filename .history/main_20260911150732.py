@@ -39,9 +39,6 @@ class MainFrame(wx.Frame):
         btn_converter = wx.Button(panel, label="Converter")
         btn_converter.Bind(wx.EVT_BUTTON, self.on_converter)
         sizer.Add(btn_converter, 0, wx.ALL | wx.EXPAND, 5)
-        btn_sair = wx.Button(panel, label="Sair")
-        btn_sair.Bind(wx.EVT_BUTTON, lambda event: self.Close())
-        sizer.Add(btn_sair, 0, wx.ALL | wx.EXPAND, 5)
         panel.SetSizer(sizer)
 
     def on_converter(self, event):
